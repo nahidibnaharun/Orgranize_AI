@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Schedule Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Schedule Assistant</h1>
+            <p>Describe your schedule in natural language, and I'll help organize it</p>
+        </header>
+
+        <div class="schedule-container">
+            <div class="schedule-table-wrapper">
+                <table id="scheduleTable">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Event Type</th>
+                            <th>Date</th>
+                            <th>Time</th> <!-- New Time Column -->
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id="scheduleBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="table-actions">
+            <button id="copyScheduleBtn" class="btn btn-secondary">Copy Schedule</button>
+        </div>
+
+        <div class="input-section">
+            <form id="scheduleForm">
+                <textarea 
+                    id="userInput" 
+                    placeholder="Enter your schedule details (e.g., 'Meeting with team on Monday at 2 PM')"
+                    rows="4"
+                ></textarea>
+                
+                <div class="button-group">
+                    <button type="submit" id="sendBtn" class="btn btn-primary">Send</button>
+                    <button type="button" id="clearInputBtn" class="btn btn-secondary">Clear Input</button>
+                    <button type="button" id="deleteAllBtn" class="btn btn-danger">Delete All</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="confirmModal" class="modal">
+            <div class="modal-content">
+                <h2>Delete All Schedules</h2>
+                <p>This action cannot be undone. This will permanently delete all your saved schedules.</p>
+                <div class="modal-buttons">
+                    <button id="cancelDelete" class="btn btn-secondary">Cancel</button>
+                    <button id="confirmDelete" class="btn btn-danger">Delete All</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
