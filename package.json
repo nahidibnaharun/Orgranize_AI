@@ -3,9 +3,9 @@
     "@google/generative-ai": "^0.21.0",
     "express": "^4.21.1"
   },
-  "name": "schedule---copy",
+  "name": "server.js",
   "version": "1.0.0",
-  "main": "script.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
